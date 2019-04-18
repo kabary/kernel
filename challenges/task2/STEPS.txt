@@ -1,0 +1,51 @@
+Step 1:
+
+Download a kernel source.
+
+$ wget git.kernel.org/pub/scm/linux/kerne/git/torvalds/linux.git/snapshot/linux-5.1-rc5.tar.gz
+
+Step 2:
+
+Decompress the kernel source.
+
+$ tar -xvf linux-5.1-rc5.tar.gz
+
+Step 3: 
+
+Configure the Linux kernel features and modules
+
+$ cd linux-5.1-rc5
+$ cp -v /boot/config-$(uname -r) .config
+
+Step 4: 
+
+Install the required compilers and other tools
+
+$ yum groupinstall "Development Tools"
+$ yum install ncurses-devel bison flex elfutils-libelf-devel openssl-devel
+
+Step 5:
+
+Configuring the kernel
+
+$ make menuconfig
+
+Step 6:
+
+Compile the Linux Kernel
+
+$ make -j 4
+$ make modules_install 
+$ make install
+
+Step 7:
+
+Update grub config
+
+$ grub2-mkconfig -o /boot/grub2/grub.cfg
+$ grubby --set-default /boot/vmlinuz-5.1
+$ grubby --default-kernel
+$ reboot
+
+Enjoy!
+

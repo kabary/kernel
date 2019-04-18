@@ -1,0 +1,19 @@
+1. Change the CONFIG_LOCALVERSION=y in .config file.
+
+2. make menuconfig
+
+3. make -j 4
+
+4. make modules_install
+
+5. make install
+
+6. grub2-mkconfig -o /boot/grub2/grub.cfg
+
+7. grubby --set-default /boot/vmlinuz-5.1.0-rc5y
+
+8. grubby --default-kernel]
+
+9. reboot
+
+10. uname -r
