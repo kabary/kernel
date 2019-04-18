@@ -1,0 +1,25 @@
+Step 1.
+
+Change the EXTRAVERSION field in the Makefile to -kabary
+
+Step 2.
+
+Rebuild the kernel.
+
+Step 3.
+
+Reboot.
+
+Step 4.
+
+For Submitting Patches.
+
+$ cp Makefile Makefile.orig
+
+$ vi Makefile (and do your change here).
+
+$ diff -up Makefile{.orig,} /tmp/patch
+
+
+
+
